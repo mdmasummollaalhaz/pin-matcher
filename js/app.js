@@ -15,3 +15,22 @@ function generatePin(){
     // console.log(pin);
     document.getElementById('display-pin').value = pin;
 }
+
+
+document.getElementById('key-pad').addEventListener('click', function(event){
+    const number = event.target.innerText;
+    const calsInput = document.getElementById('type-numbers');
+    if(isNaN(number)){
+        if(number == 'C'){
+            calsInput.value = '';
+        }
+        
+    }
+    else{
+    const previousNumber = calsInput.value;
+    const newNumber = previousNumber + number;
+    calsInput.value = newNumber;
+
+    }
+    
+})
